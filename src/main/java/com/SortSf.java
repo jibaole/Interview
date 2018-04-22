@@ -59,7 +59,6 @@ public class SortSf {
     public static void selectSort(int[] arr) {
         int position = 0;
         for (int i = 0; i < arr.length; i++) {
-
             int j = i + 1;
             position = i;
             int temp = arr[i];

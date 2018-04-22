@@ -78,14 +78,6 @@ public class LinkedList<T> {
      */
     public void printLinkList() {
         Node<T> curr = this.head;
-        if (isEmpty()) {
-            try {
-                throw new Exception("linklist is empty");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
         while(curr != null){
             System.out.print(curr.data+" ");
             curr = curr.next;

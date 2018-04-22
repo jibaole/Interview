@@ -100,7 +100,7 @@ public class RedisLockTest {
             RedisLockTest testCli = new RedisLockTest();
             testCli.lock(lockID);
             try {
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -109,8 +109,9 @@ public class RedisLockTest {
 
         MyThreadFactory factory = new MyThreadFactory();
         ExecutorService services = Executors.newFixedThreadPool(10);
-        for (int i = 0;i<3;i++)
-            services.execute(factory.newThread(task));
+        for (int i = 0;i<10;i++) {
+            services.execute( factory.newThread( task ) );
+        }
     }
 
 }
