@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Arrays;
+
 /**
  * @description：常见算法
  * @desc:参考地址：http://www.codeceo.com/8-java-sort.html
@@ -118,19 +120,78 @@ public class SortSf {
         }
     }
 
+    /**
+     * @des
+     * @param data
+     * @param left
+     * @param right
+     */
+    public static void sort(int[] data, int left, int right) {
+        if (left < right) {
+            //找出中间索引
+            int center = (left + right) / 2;
+            //对左边数组进行递归
+            sort( data, left, center );
+            //对右边数组进行递归
+            sort( data, center + 1, right );
+            //合并
+            merge( data, left, center, right );
+
+        }
+    }
+
+    /**
+     * 归并排序
+     * @param data
+     * @param left
+     * @param center
+     * @param right
+     */
+    public static void merge(int[] data, int left, int center, int right) {
+        int[] tmpArr = new int[data.length];
+        int mid = center + 1;
+        //third记录中间数组的索引
+        int third = left;
+        int tmp = left;
+        while (left <= center && mid <= right) {
+
+            //从两个数组中取出最小的放入中间数组
+            if (data[left] <= data[mid]) {
+                tmpArr[third++] = data[left++];
+            } else {
+                tmpArr[third++] = data[mid++];
+            }
+        }
+        //剩余部分依次放入中间数组
+        while (mid <= right) {
+            tmpArr[third++] = data[mid++];
+        }
+        while (left <= center) {
+            tmpArr[third++] = data[left++];
+        }
+        //将中间数组中的内容复制回原数组
+        while (tmp <= right) {
+            data[tmp] = tmpArr[tmp++];
+        }
+    }
+
 
     public static void main(String[] args) {
-        int[] arr = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51};
-        //1、冒泡排序
+        int[] arr = {76, 13, 27, 49, 78, 34, 64, 5};
+       /* //1、冒泡排序
         bubbleSort( arr );
-        System.out.println( "------------" );
+        System.out.println("\n"+"------------" );
         //2、直接插入排序
         insertSort( arr );
-        System.out.println( "------------" );
+        System.out.println("\n"+"------------" );
         //3、选择排序
         selectSort( arr );
-        System.out.println( "------------" );
+        System.out.println("\n"+"------------" );
         //4、快速排序
-        quickSort( arr );
+        quickSort( arr );*/
+        //5、归并排序
+        sort(arr,0,arr.length-1);
+        System.out.println("\n"+"------------" );
+        System.out.println("\n"+ Arrays.toString( arr ) );
     }
 }
