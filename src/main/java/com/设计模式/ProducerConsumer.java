@@ -1,4 +1,4 @@
-package com;
+package com.设计模式;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -9,13 +9,13 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @Url:https://www.cnblogs.com/happyPawpaw/archive/2013/01/18/2865957.html
  */
 
-public class 生产_消费者 {
+public class ProducerConsumer {
     /**
      * 建立一个阻塞队列
      */
     private LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<Object>(10);
 
-    public 生产_消费者() {
+    public ProducerConsumer() {
         new Producer().start();
         new Consumer().start();
     }
@@ -23,7 +23,7 @@ public class 生产_消费者 {
 
 
     public static void main(String[] args) throws Exception {
-        new 生产_消费者();
+        new ProducerConsumer();
     }
 
     class Producer extends Thread {
