@@ -1,12 +1,12 @@
 package com;
 
 /**
- * @description：
+ * @description：查找字符串出现的个数
  * @author：JBL
  * @date：2018/4/15
  */
 
-public class StringSample {
+public class 找字符频数 {
     public static void main(String[] args) {
         String str="dhwoiuqhduwqdddddddhwjdassssssssddd";
         int i = countMatches( str, "wj" );

@@ -7,7 +7,7 @@ package com;
  * @contact hongtenzone@foxmail.com
  * @create 2013-08-13
  */
-public class NumberToCN {
+public class 钱数转汉字 {
     private static String[] num = {"零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"};
 
     private static String[] unit = {"", "十", "百", "千", "万", "十", "百", "千", "亿"};
