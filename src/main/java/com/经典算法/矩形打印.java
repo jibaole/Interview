@@ -8,7 +8,7 @@ import org.junit.Test;
  * @date：2018/4/28
  */
 
-public class RectanglePrint {
+public class 矩形打印 {
     /**
      * 顺时针打印一个矩阵
      * @param num
