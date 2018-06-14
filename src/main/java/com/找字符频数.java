@@ -1,17 +1,18 @@
 package com;
 
 /**
- * @description£º²éÕÒ×Ö·û´®³öÏÖµÄ¸öÊý
- * @author£ºJBL
- * @date£º2018/4/15
+ * @descriptionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÖµÄ¸ï¿½ï¿½ï¿½
+ * @authorï¿½ï¿½JBL
+ * @dateï¿½ï¿½2018/4/15
  */
 
-public class ÕÒ×Ö·ûÆµÊý {
+public class ï¿½ï¿½ï¿½Ö·ï¿½Æµï¿½ï¿½ {
     public static void main(String[] args) {
         String str="dhwoiuqhduwqdddddddhwjdassssssssddd";
         int i = countMatches( str, "wj" );
         System.out.println(i);
     }
+
 
 
    public static int countMatches(String str,String f){
